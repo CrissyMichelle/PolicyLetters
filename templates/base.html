@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>{% block title %}Template{% endblock %}</title>
+</head>
+<body><div class="container-md text-center text-white bg-dark">
+<h1><img src="https://home.army.mil/hawaii/application/files/4816/3720/1504/USARHAW__25ID__logo.png" alt="img of 25ID and USARHAW">
+    <p>{% block header %}25ID and USARHAW Policy Letters{% endblock %}</p>
+    <p>TROPIC LIGHTNING</p></h1>
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}<hr>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="/">Lightning Operations</a>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              PDFs
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/policies">All Policies</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=3) }}">Policy #3</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=7) }}">Policy #7</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=8) }}">Policy #8</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=10) }}">Policy #10</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=11) }}">Policy #11</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=12) }}">Policy #12</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=13) }}">Policy #13</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'letter', num=14) }}">Policy #14</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=1) }}">USARHAW Policy #1</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=2) }}">USARHAW Policy #2</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=3) }}">USARHAW Policy #3</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=4) }}">USARHAW Policy #4</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=5) }}">USARHAW Policy #5</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=6) }}">USARHAW Policy #6</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=7) }}">USARHAW Policy #7</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=9) }}">USARHAW Policy #9</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=10) }}">USARHAW Policy #10</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=15) }}">USARHAW Policy #15</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=17) }}">USARHAW Policy #17</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=19) }}">USARHAW Policy #19</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=20) }}">USARHAW Policy #20</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=25) }}">USARHAW Policy #25</a>
+              <a class="dropdown-item" href="{{ url_for('show_single_pdf', policy = 'USARHAW', num=27) }}">USARHAW Policy #27</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/log">LOG</a></li>
+          <li class="nav-item"><a class="nav-link" href="/directions">Get Directions</a></li>
+        </ul>
+    </nav>
+    <hr>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

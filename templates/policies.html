@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Policy Letters{% endblock %}
+
+{% block content %}
+{% for pdf in pdf_files %}
+    <div class="pdf-container">
+        <embed src="{{ url_for('static', filename='pdfs/' + pdf) }}" type="application/pdf" width="600" height="400">
+    </div>
+{% endfor %}
+{% endblock %}

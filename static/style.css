@@ -1,0 +1,37 @@
+.pdf-container {
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.photo-wrapper {
+    padding: 0 200px;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.photo {
+    margin: 20px auto;
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#route-panel {
+    width: 75%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
