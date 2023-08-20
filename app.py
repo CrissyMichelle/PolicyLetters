@@ -1,7 +1,7 @@
 from flask import Flask, session, render_template, redirect, flash, session, url_for, request, jsonify, current_app
 from flask_debugtoolbar import DebugToolbarExtension
 from werkzeug.exceptions import Unauthorized
-from key import GOOGLE_MAPS_KEY
+# from key import GOOGLE_MAPS_KEY
 # from models import db, connect_db, NewSoldier, Soldier
 from forms import GetDirectionsForm, CustomFieldParam
 import requests
@@ -15,9 +15,8 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://kbymaecc:hmiBfUsgWuKYu7elxc_Pt1-etdxWo-Md@bubble.db.elephantsql.com/kbymaecc'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_ECHO'] = True
+# set the required API key value from a local environment variable
+GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
 
 app.config["SECRET_KEY"] = "psst420"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
