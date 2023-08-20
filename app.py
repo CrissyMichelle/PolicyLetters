@@ -68,10 +68,12 @@ def get_directions_for_api_call():
 def show_get_directions():
     """Render HTML page showing google map and form for api call.  Accepts parameters as query strings"""
 
+    key = GOOGLE_MAPS_KEY
+
     start = request.args.get('origin', 'Lyman Gate, HI')
     end = request.args.get('destination', '')
     mode = request.args.get('mode', 'DRIVING')
 
     form = GetDirectionsForm()
-    return render_template("directions.html", origin=start, destination=end, mode=mode, form=form)
+    return render_template("directions.html", key=key, origin=start, destination=end, mode=mode, form=form)
 
